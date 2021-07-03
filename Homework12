@@ -1,0 +1,87 @@
+# previous 3 tasks
+# class DICTS:
+#     def __init__(self, dict_):
+#         self.dict_1 = dict_
+#         self.new_dict = {}
+#         self.temp = []
+#
+#
+#     def python_dict(self):
+#         for i in self.dict_1:
+#             self.new_dict[i] = 1
+#         return self.new_dict
+#
+#     def python_dict_1(self):
+#         for key, value in self.dict_1.items():
+#             if value not in self.new_dict.values():
+#                 self.new_dict[key] = value
+#         return self.new_dict
+#
+#     def python_dict_2(self):
+#         for key, value in self.dict_1.items():
+#             self.temp.append(value)
+#             self.temp.sort()
+#
+#         return self.temp[-3:]
+#
+#
+# my_dict2 = DICTS({1: 1, 2: 2, 5: 6, 4: 3})
+# my_dict = DICTS("python")
+# my_dict1 = DICTS({1: 15, 2: 15, 3: 6, 7: 8})
+# print(my_dict1.python_dict_1())
+# print(my_dict.python_dict())
+# print(my_dict2.python_dict_2())
+
+
+# new tasks
+
+# class Circle:
+#     def __init__(self, r):
+#         self.r = r
+#         self.c = 0
+#
+#     def to_find_c(self):
+#         self.r *= 2
+#         return self.r
+#
+#     def to_find_area(self):
+#         self.r = self.r**2
+#         return self.r
+#
+#
+# perimeter = int(input("Input radius to find perimeter and area\n"))
+# your_perimeter = Circle(perimeter)
+# your_area = Circle(perimeter)
+# print(your_area.to_find_area(), "* pi")
+# print(your_perimeter.to_find_c(), "* pi")
+
+# class Triangle:
+#     def __init__(self, b, h, c=""):
+#         self.b = b
+#         self.h = h
+#         self.c = c
+#
+#     def to_find_area(self):
+#         area = self.b * self.h / 2
+#         return area
+#
+#     def to_find_perimeter(self):
+#         perimeter = self.b + self.h + self.c
+#
+#         return perimeter
+
+
+"""please, comment the part(ex. comment area if you want to work with perimeter) of to make work the code"""
+
+
+
+
+# basis = int(input("Input basis to find area of Triangle\n"))
+# height = int(input("Input height to find area of Triangle\n"))
+# side_h = int(input(" Input one of the side's length by sm of Triangle\n"))
+# side_b = int(input(" Input one of the side's length by sm of Triangle\n"))
+# side_c = int(input(" Input one of the side's length by sm of Triangle\n"))
+# your_perimeter = Triangle(side_b, side_h, side_c)
+# #your_area = Triangle(basis, height)
+# print(your_perimeter.to_find_perimeter())
+# #print(your_area.to_find_area())
