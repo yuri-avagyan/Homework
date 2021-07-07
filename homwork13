@@ -1,0 +1,188 @@
+# HOMEWORK triangle
+
+# class Triangle:
+#
+#     AMOUNT_OF_OBJECTS = 0
+#     CURRENT_OBJECTS = 0
+#
+#     def __new__(cls, *args, **kwargs):
+#         Triangle.AMOUNT_OF_OBJECTS += 1
+#         Triangle.CURRENT_OBJECTS += 1
+#         return super().__new__(cls)
+#
+#     def __init__(self, b, h=0, c=0, d=0):
+#         """The arguments of Triangle class introduced as both side length and basis or height and angle"""
+#
+#         self.b = b
+#         self.h = h
+#         self.c = c
+#         self.d = d
+#
+#     def is_alike(self):
+#         first_triangle_side = self.b
+#         second_triangle_side = self.h
+#         first_triangle_angle = self.c
+#         second_triangle_angle = self.d
+#         first_triangle_side.sort()
+#         second_triangle_side.sort()
+#         first_triangle_angle.sort()
+#         second_triangle_angle.sort()
+#         if first_triangle_side[0] / second_triangle_side[0] == first_triangle_side[1] / second_triangle_side[1]:
+#             if first_triangle_angle[0] == second_triangle_angle[0]:
+#                 return " These are similar Triangles by algorithm side, angle, side"
+#         if first_triangle_side[1] / second_triangle_side[1] == first_triangle_side[2] / second_triangle_side[2]:
+#             if first_triangle_angle[1] == second_triangle_angle[1]:
+#                 return " These are Triangles by algorithm side, angle, side"
+#
+#         if first_triangle_side[2] / second_triangle_side[2] == first_triangle_side[0] / second_triangle_side[0]:
+#             if first_triangle_angle[2] == second_triangle_angle[2]:
+#                 return " These are Triangles by algorithm side, angle, side"
+#         elif first_triangle_side[0] / second_triangle_side[0] == first_triangle_side[1] / second_triangle_side[1] \
+#             and first_triangle_side[1] / second_triangle_side[1] == first_triangle_side[2] / second_triangle_side[2] \
+#             and first_triangle_side[2] / second_triangle_side[2] == first_triangle_side[0] / second_triangle_side[0]:
+#             return " These are similar Triangles by algorithm side, side, side"
+#         elif first_triangle_angle[0] == second_triangle_angle[0] \
+#                 or first_triangle_angle[1] == second_triangle_angle[1] \
+#                 or first_triangle_angle[2] == second_triangle_angle[2]:
+#             return " These are similar Triangles by algorithm angle, angle, angle"
+#         else:
+#             return " These are not similar Triangles"
+#
+#     def to_find_area(self):
+#
+#         area = self.b * self.h / 2
+#         return area
+#
+#     def to_find_perimeter(self):
+#
+#         perimeter = self.b + self.h + self.c
+#
+#         return perimeter
+#
+#     def __gt__(self, other):
+#         if not isinstance(other, Triangle):
+#             raise ValueError("Other object is not from class Triangle")
+#
+#         return self.to_find_perimeter() > other.to_find_perimeter()
+#
+#     def present(self):
+#         return f"Triangle ({self.b}, {self.h}, {self.c}, {self.d})"
+#
+#     def __repr__(self):
+#         return f"{self.present()} from class Triangle between classes of Triangle, Cube, Rectangle, project Homework"
+#
+#     def __del__(self):
+#         print(self, "Is dilated")
+#         Triangle.CURRENT_OBJECTS -= 1
+#         print(Triangle.CURRENT_OBJECTS)
+#
+#
+# """  If you are naughty user, you can uncomment this line of code and create yor lists using input tool
+# n = 3
+# triangle_side_1 = []
+# triangle_side_2 = []
+# triangle_angle_1 = []
+# triangle_angle_2 = []
+#
+# for i in range(0, n):
+#     element = int(input("Input your first triangle's A, B, C sides lenght\n"))
+#     triangle_side_1.append(element)
+# print(triangle_side_1)
+# for i in range(0, n):
+#     element = int(input("Input your second triangle's A, B, C sides lenght\n"))
+#     triangle_side_2.append(element)
+# print(triangle_side_2)
+# for i in range(0, n):
+#     element = int(input("Input your first triangle's A, B, C angle's degree\n"))
+#     triangle_angle_1.append(element)
+# print(triangle_angle_1)
+# for i in range(0, n):
+#     element = int(input("Input your second triangle's A, B, C angle's degree\n"))
+#     triangle_angle_2.append(element)
+# print(triangle_side_1, triangle_side_2, triangle_angle_1, triangle_angle_2, sep="\n")
+# """
+#
+#
+# first_triangle_sides = [3, 2, 3]
+# second_triangle_sides = [4, 6, 6]
+# first_triangle_angles = [80, 60, 40]
+# second_triangle_angles = [60, 40, 80]
+# compare_triangles = Triangle(first_triangle_sides, second_triangle_sides, first_triangle_angles, second_triangle_angles)
+# print(compare_triangles.is_alike())
+
+# obj_1 = Triangle(1, 2, 12)
+# obj_2 = Triangle(2, 3)
+# print(obj_2.to_find_area())
+# print(obj_1 > obj_2)
+# print(Triangle.AMOUNT_OF_OBJECTS, Triangle.CURRENT_OBJECTS)
+# del obj_2
+
+
+# class RECTANGLE:
+#
+#     AMOUNT_OF_OBJECTS = 0
+#     CURRENT_OBJECTS = 0
+#
+#     def __new__(cls, *args, **kwargs):
+#         RECTANGLE.AMOUNT_OF_OBJECTS += 1
+#         RECTANGLE.CURRENT_OBJECTS += 1
+#         return super().__new__(cls)
+#
+#     def __init__(self, side_1, side_2, side_3=0, side_4=0):
+#
+#         self.side1 = side_1
+#         self.side2 = side_2
+#         self.side3 = side_3
+#         self.side4 = side_4
+#
+#     def perimeter_(self):
+#         return self.side1 + self.side2 + self.side3 + self.side4
+#
+#     def area(self):
+#         area_ = self.side1 * self.side2
+#         return area_
+#
+#     def __gt__(self, other):
+#         if not isinstance(other, RECTANGLE):
+#             raise ValueError("Other object is not belong to class RECTANGLE")
+#         return self.perimeter_() > other.perimeter_()
+#
+#     def present(self):
+#         return f"Rectangle ({self.side1}, {self.side2}, {self.side3}, {self.side4})"
+#
+#     def __repr__(self):
+#         return f"{self.present()} from class RECTANGLE between classes of Triangle, Cube, Rectangle, project Homework"
+#
+#     def __del__(self):
+#         print(self, "Is dilated")
+#         RECTANGLE.CURRENT_OBJECTS -= 1
+#         print(RECTANGLE.CURRENT_OBJECTS)
+#
+#
+# obj_1 = RECTANGLE(5, 6)
+# obj_2 = RECTANGLE(2, 4, 6, 8)
+# print(obj_1.area())
+# print(obj_2.perimeter_())
+# del obj_2
+# print(RECTANGLE.CURRENT_OBJECTS)
+# print(RECTANGLE.AMOUNT_OF_OBJECTS)
+
+
+# class CUBE:
+# 
+#     def __init__(self, volume, area):
+#         self.volume = volume
+#         self.area = area
+# 
+#     def to_find_volume(self):
+#         vol = self.volume * self.volume * self.volume
+#         return vol
+# 
+#     def to_find_area(self):
+#         ar = self.area**2 * 6
+#         return ar
+# 
+# 
+# obj1 = CUBE(5, 6)
+# print(obj1.to_find_volume())
+# print(obj1.to_find_area())
