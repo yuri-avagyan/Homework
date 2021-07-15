@@ -1,0 +1,151 @@
+# class Country:
+#
+#     def __init__(self, name, continent, *args, **kwargs):
+#         self.name_ = name
+#         self.continent_ = continent
+#
+#     def present_country(self):
+#         return f"Country of brand is {self.name_}, Continent {self.continent_}"
+#
+#
+# class Brand:
+#
+#     def __init__(self, brand_name, business_start_date, *args, **kwargs):
+#         self.brandName = brand_name
+#         self.start_date = business_start_date
+#         super().__init__(*args, kwargs)
+#
+#     def present_of_brand(self):
+#         return f"Brand name is {self.brandName}, established in {self.start_date}"
+#
+#
+# class Season:
+#
+#     def __init__(self, season_name, *args, **kwargs):
+#         self.season = season_name
+#         super().__init__(*args, **kwargs)
+#
+#     def present_season(self):
+#         return f"for {self.season} whether"
+#
+#
+# class Product(Season, Brand, Country):
+#
+#     def __init__(self, product_name, product_type, product_price, product_quantity, *args, **kwargs):
+#         self.pr_name = product_name
+#         self.pr_type = product_type
+#         self.pr_price = product_price
+#         self.pr_quantity = product_quantity
+#         super().__init__(*args, **kwargs)
+#
+#     def present(self):
+#         return self.present_of_brand(), self.present_country(), self.present_season(), \
+#                f"Product name is {self.pr_name}, product type is {self.pr_type}, " \
+#                f"product price is {self.pr_price},quantity is "f"{self.pr_quantity}"
+#
+#     def discount(self, percent):
+#         discounted = self.pr_price * percent // 100
+#         discounted_1 = self.pr_price - discounted
+#         return discounted_1
+#
+#     def increase(self, unit):
+#         increased = self.pr_quantity + unit
+#         return increased
+#
+#     def decrease(self, unit):
+#         decreased = self.pr_quantity - unit
+#         return decreased
+#
+#
+# package = Product("KED", "Shoe", 500, 10, "summer", "Nike", 1991, "Armenia", "Asia")
+# print(package.present())
+# print(package.discount(40))
+# print(package.increase(5))
+# print(package.decrease(7))
+
+# 
+# class Hotel:
+#     def __init__(self, name, place, mid_price, lux_price, *args, **kwargs):
+#         self.hotel_name = name
+#         self.place = place
+#         self.mid_room_price = mid_price
+#         self.lux_room_price = lux_price
+#         self.mid_room = {"room1": "free", "room2": "free", "room3": "free"}
+#         self.lux_room = {"room1": "free", "room2": "free", "room3": "free"}
+# 
+#     def present_of_hotel(self):
+#         return str(f"Hotel name is {self.hotel_name}, situated in {self.place}."
+#                    f" \nMiddle room price is {self.mid_room_price}, lux room price is {self.lux_room_price}")
+# 
+#     def booking_mid_rooms(self):
+#         for key, value in self.mid_room.items():
+#             if "free" in self.mid_room[key]:
+#                 self.mid_room[key] = "busy"
+#                 break
+#         return self.mid_room
+# 
+#     def booking_lux_rooms(self):
+#         for key, value in self.lux_room.items():
+#             if "free" in self.lux_room[key]:
+#                 self.lux_room[key] = "busy"
+#                 break
+#         return self.lux_room
+# 
+#     def available_room_check(self):
+#         lux = 0
+#         mid = 0
+#         for key, value in self.lux_room.items():
+#             if "free" in self.lux_room[key]:
+#                 lux += 1
+#         for key, value in self.mid_room.items():
+#             if "free" in self.mid_room[key]:
+#                 mid += 1
+#         return f"There are {lux} available Lux rooms and {mid} available middle rooms"
+# 
+#     def discount(self, percent):
+#         discounted = self.mid_room_price * percent // 100
+#         discounted_1 = self.mid_room_price - discounted
+#         return f"We have discount for students. Students can book rooms by {discounted_1} besides {self.mid_room_price}"
+# 
+# 
+# class Taxi:
+#     def __init__(self, name_taxi, car_type, taxi_price, *args, **kwargs):
+#         self.name_taxi = name_taxi
+#         self.car = car_type
+#         self.trip_price = taxi_price
+#         super().__init__(*args, **kwargs)
+# 
+#     def present_taxi_tour(self):
+#         return f"We cooperate with {self.name_taxi} taxi service which provides {self.car} cars." \
+#                f" They require {self.trip_price} for 1 trip"
+# 
+#     def discount_taxi(self, percent):
+#         discounted = self.trip_price * percent // 100
+#         discounted_1 = self.trip_price - discounted
+#         return f"Taxi service has discounted offer {discounted_1}"
+# 
+# 
+# class Tour(Taxi, Hotel):
+#     def __init__(self, tour_name, *args, **kwargs):
+#         self.tour_name = tour_name
+#         super().__init__(*args, **kwargs)
+# 
+# 
+#     def full_package_presentation(self):
+#         return str(f"We offer {self.tour_name} tour that has Lux and Middle options. \nYou will stay"
+#                    f" at {self.hotel_name} hotel which offers Lux rooms by {self.lux_room_price} Drams and"
+#                    f" Middle rooms by {self.mid_room_price} Drams. \nAt least, if you choose Lux option it will"
+#                    f" cost {self.lux_room_price} + {self.trip_price}, else {self.mid_room_price} + "
+#                    f"{self.trip_price}")
+
+
+# my_hotel = Hotel("Otevan", "Dilijan", 15000, 25000)
+# print(my_hotel.booking_mid_rooms())
+# print(my_hotel.booking_lux_rooms())
+# print(my_hotel.available_room_check())
+# print(my_hotel.discount(20))
+# my_taxi = Taxi("Milena", "Toyota Corolla", 8000)
+# print(my_taxi.present_taxi_tour())
+# print(my_taxi.discount_taxi(20))
+# my_tour = Tour("Noravank", "Milena", "Toyota Corolla", 8000, "Otevan", "Dilijan", 15000, 25000)
+# print(my_tour.full_package_presentation())
