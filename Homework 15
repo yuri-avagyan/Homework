@@ -1,0 +1,50 @@
+import os
+
+#os.makedirs("Dir\Dir_1\Dir_2")
+#os.chdir("Dir")
+# with open("File.txt", "x") as file:
+#     data = file.create()
+#
+# os.chdir("Dir_1")
+# os.makedirs("Dir_3\Dir_4")
+# print(os.getcwd())
+
+# user_will = input("Write file name you want to delete between files of Dir, Dir_1, Dir_2, Dir_3, Dir_4, File.txt\n")
+# if user_will.endswith("r"):
+#     os.chdir("Dir")
+#     os.remove("File.txt")
+#     os.chdir("Dir_1")
+#     os.rmdir("Dir_2")
+#     os.chdir("Dir_3")
+#     os.rmdir("Dir_4")
+#     os.chdir("..")
+#     os.rmdir("Dir_3")
+#     os.chdir("..")
+#     os.rmdir("Dir_1")
+#     os.chdir("..")
+#     os.rmdir("Dir")
+# elif user_will.endswith("_1"):
+#     os.chdir("Dir\Dir_1")
+#     os.rmdir("Dir_2")
+#     os.chdir("Dir_3")
+#     os.rmdir("Dir_4")
+#     os.chdir("..")
+#     os.rmdir("Dir_3")
+#     os.chdir("..")
+#     os.rmdir("Dir_1")
+# elif user_will.endswith("_2"):
+#     os.chdir("Dir\Dir_1")
+#     os.rmdir("Dir_2")
+# elif user_will.endswith("_3"):
+#     os.chdir("Dir\Dir_1\Dir_3")
+#     os.rmdir("Dir_4")
+#     os.chdir("..")
+#     os.rmdir("Dir_3")
+# elif user_will.endswith("_4"):
+#     os.chdir("Dir\Dir_1\Dir_3")
+#     os.rmdir("Dir_4")
+# elif user_will.endswith(".txt"):
+#     os.chdir("Dir")
+#     os.remove("File.txt")
+# else:
+#     print("You have input wrong name of file or direction\ntry again")
