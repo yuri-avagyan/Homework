@@ -1,0 +1,120 @@
+# import json
+#
+# with open("File.txt") as file:
+#     dict_ = file.readlines()
+# my_list = []
+#
+#
+# for line in dict_:
+#     line = line.split(',')
+#     line = [i.strip() for i in line]
+#     my_list.append(line)
+# price_1 = my_list[0]
+# price_2 = my_list[1][1][8:]
+# print(int(price_1[1][8:]) + int(price_2))
+# print(json.dumps(my_list, indent=4))
+
+import json
+import requests
+import yaml
+
+"""txt to json"""
+# txt_file = "File.txt"
+# with open(txt_file) as file:
+#     data = file.read()
+# print(data)
+#
+# with open("file.json", "w") as json_file:
+#     json.dump(data, json_file)
+
+"""json to txt"""
+
+# my_dict = {"school": "Basic IT", "address": "Yerevan", "lessons": "Python"}
+# with open("file.json", "w") as json_file:
+#     json.dump(my_dict, json_file, indent=2)
+#
+# my_file = "file.json"
+# with open(my_file) as json__file:
+#     data = json.load(json__file)
+# with open("File.txt", "w") as written_file:
+#     written_file.write(str(data))
+
+"""json to yaml"""
+#
+# my_file = "file.json"
+# with open(my_file) as json_file:
+#     data = json.load(json_file)
+# with open("file.yaml", "w") as yam_file:
+#     yaml.dump(data, yam_file)
+
+"""yaml to json"""
+
+# my_file = "file.yaml"
+# with open(my_file) as yam_file:
+#     data = yaml.load(yam_file)
+# with open("file.json", "w") as js_file:
+#     json.dump(data, js_file)
+
+"""yaml to text"""
+
+# my_file = "file.yaml"
+# with open(my_file) as file:
+#     data = yaml.load(file)
+# with open("File.txt", "w") as written_file:
+#     written_file.write(str(data))
+
+#
+# class Download:
+#
+#     def __init__(self, obj):
+#         self.obj = obj
+#
+#     def link_list_maker(self):
+#         image_list = []
+#         with open(self.obj) as file:
+#             for line in file:
+#                 image_list.append(line)
+#         return image_list
+#
+#     def jpeg_downloader(self):
+#         response = requests.get(self.obj)
+#         with open("new_photo.jpeg", 'wb') as file:
+#             file.write(response.content)
+#         return file
+#
+#     def png_downloader(self):
+#         response = requests.get(self.obj)
+#         with open("new_photo.png", "wb") as photo:
+#             photo.write(response.content)
+#         return photo
+
+
+# my_txt = Download("file_1.txt")
+# print(my_txt.link_list_maker())
+# your_jpeg = Download("http://realmadrid.am/images/timthumb.php?src=/images/blog/ea"
+#                      "ad71ba0cd106b79cead663dc75688b.jpeg&w=800&h=500&q=70")
+# print(your_jpeg.jpeg_downloader())
+# your_png = Download("http://realmadrid.am/images/timthumb.php?src=/images/blog/f5094193867e53d"
+#                     "08d6784c4f2d24642.jpg&w=800&h=500&q=70")
+# print(your_png.png_downloader())
+
+
+# latest homework
+
+# total_sum = 0
+# my_list = [10, 5, 7, 6, 14, 5]
+# for element in range(0, len(my_list)):
+#     total_sum = total_sum + my_list[element]
+# print(total_sum)
+
+#
+# def rec_list_sum(list_):
+#     total_sum = 0
+#     for element in list_:
+#         if type(element) == type([]):
+#             total_sum += rec_list_sum(element)
+#         else:
+#             total_sum += element
+#     return total_sum
+#
+# print(rec_list_sum([1, 2, [3,4], [5,6]]))
