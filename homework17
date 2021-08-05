@@ -1,0 +1,32 @@
+# import requests
+#
+# response = requests.get('https://xkcd.com/353/')
+# response = response.text
+# url_ = "https://xkcd.com"
+# list_ = []
+# list_1 = []
+# with open("new_ph_text.txt", "w") as file:
+#     file.write(response)
+# with open("new_ph_text.txt") as file_1:
+#     for line in file_1:
+#         start_index = line.find("src=")
+#         first_part = line[start_index:]
+#         last_index = first_part.find(".png")
+#         last_part = first_part[:last_index+4]
+#         latest = last_part.split("\n")
+#         list_.append(latest)
+# count = 1
+# for i in list_:
+#     if i != ['', ''] and i != ['src']:
+#         data = " ".join(i)
+#         data = data[5:]
+#         if "imgs.xkcd.com" in data:
+#             list_1.append("http:" + data)
+#         else:
+#             list_1.append(url_ + data)
+#
+# for image in list_1:
+#     final_response = requests.get(image)
+#     with open(f"new_photo{count}.png", "wb") as photo:
+#         photo.write(final_response.content)
+#     count += 1
