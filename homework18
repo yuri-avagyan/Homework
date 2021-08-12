@@ -60,7 +60,6 @@
 #     print(e)
 #     sys.exit()
 # #
-# # # Creating a cursor to execute commands (queries)
 # curs = conn.cursor()
 #
 # user_table_create = """ CREATE TABLE IF NOT EXISTS book (
@@ -73,7 +72,6 @@
 #
 # curs.execute(user_table_create)
 # #
-# # # # # we should commit the changes
 # conn.commit()
 
 #
