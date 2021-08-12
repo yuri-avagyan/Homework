@@ -1,0 +1,116 @@
+
+# homework for decorators
+# import random
+# import json
+#
+# def password_generator():
+#
+#     lower_letters = "abcdefghijklmnopqrstuvwxyz"
+#     upper_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+#     numbers = "0123456789"
+#     symbols = "[]{}()*;/,"
+#     all = lower_letters + upper_letters + numbers + symbols
+#     length = 14
+#     password = "".join(random.sample(all, length))
+#
+#     return password
+#
+#
+# with open("json_file.json", "w") as file:
+#
+#     """You can take new created password from new file json_file.json"""
+#
+#     json.dump({"user_1": password_generator(), "user_2": "1234", "user_3": password_generator()}, file)
+#
+# def compliance(func, file_):
+#     def check():
+#         with open(file_) as json_file:
+#             data = json.load(json_file)
+#             users_data_1 = input("Please, input your username\n")
+#             while users_data_1 not in data:
+#                 users_data_1 = input("Wrong username, input valid one\n")
+#             else:
+#                 print(f"{users_data_1} logged in successfully")
+#             users_data_2 = input("Please, input your password\n")
+#             while users_data_2 != data[users_data_1]:
+#                 users_data_2 = input("Wrong password, input yor password\n")
+#             else:
+#                 print("Valid password, you are welcome\n")
+#             func()
+#     return check
+#
+#
+# def my_func():
+#     print("Authentication done")
+#
+# present = compliance(my_func, "json_file.json")
+# present()
+
+
+# import sqlite3
+# from sqlite3 import Error
+# import os
+# import sys
+#
+# database = os.path.join(os.getcwd(), '..', "book.db")
+# print(database)
+# try:
+#     conn = sqlite3.connect(database)
+# except Error as e:
+#     print(e)
+#     sys.exit()
+# #
+# # # Creating a cursor to execute commands (queries)
+# curs = conn.cursor()
+#
+# user_table_create = """ CREATE TABLE IF NOT EXISTS book (
+#                                         id integer PRIMARY KEY,
+#                                         book_name text NOT NULL,
+#                                         author text,
+#                                         publish_date text,
+#                                         rate text
+#                                     ); """
+#
+# curs.execute(user_table_create)
+# #
+# # # # # we should commit the changes
+# conn.commit()
+
+#
+# class BOOK:
+#
+#     def __init__(self, id, name, author, publish_date, rate):
+#         self.id = id
+#         self.name = name
+#         self.author = author
+#         self.publish_date = publish_date
+#         self.rate = rate
+#         self.conn = None
+#         self.curs = None
+#
+#     def connect(self):
+#
+#         database = os.path.join(os.getcwd(), '..', "book.db")
+#         try:
+#             conn = sqlite3.connect(database)
+#         except Error as e:
+#             print(e)
+#             sys.exit()
+#         self.conn = conn
+#         self.curs = conn.cursor()
+#
+#     def get_as_tuple(self):
+#         return (self.id, self.name, self.author, self.publish_date, self.rate)
+#
+#     def insert_function(self):
+#         insert_query = """INSERT INTO book(id, book_name, author, publish_date, rate)
+#                             VALUES(?,?,?,?,?);
+#                             """
+#         if not self.conn:
+#             self.connect()
+#
+#         self.curs.execute(insert_query, self.get_as_tuple())
+#         self.conn.commit()
+#
+# book_1 = BOOK(5, "Idiot", "Dostoyevsky", "1868", "500")
+# book_1.insert_function()
